@@ -41,7 +41,6 @@ func NewRabbitMQ(queueName, exchange, key string) *RabbitMQ {
 	}
 
 	//创建rabbitmq连接
-	fmt.Println(rabbitmq.Mqurl)
 	rabbitmq.conn, err = amqp.Dial(rabbitmq.Mqurl)  //通过amqp.Dial()方法去链接rabbitmq服务端
 	rabbitmq.failOnErr(err, "创建连接错误!")    //调用我们自定义的failOnErr()方法去处理异常错误信息
 	rabbitmq.channel, err = rabbitmq.conn.Channel() //链接上rabbitmq之后通过rabbitmq.conn.Channel()去设置channel信道

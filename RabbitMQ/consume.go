@@ -81,7 +81,7 @@ func (r *RabbitMQ) ConsumeTopic() {
 	forever := make(chan bool)
 	go func() {
 		for d := range message {
-			fmt.Printf("body:%s", string(d.Body))
+			fmt.Printf("mq-body:%s", string(d.Body))
 			err := DingTalk.Notice(d.Body)
 			if err != nil {
 				log.Printf("钉钉通知err: %s", err)

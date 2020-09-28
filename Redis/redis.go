@@ -35,7 +35,6 @@ func NewRedis() {
 	Redis.Password = cfg.MustValue("redis", "password")
 	Redis.Pool = poolInitRedis()
 
-	fmt.Printf("%v", Redis)
 }
 
 // 连接池
